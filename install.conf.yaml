@@ -1,11 +1,12 @@
 - defaults:
-  link:
-    relink: true
+    link:
+      relink: true
+      create: true
 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - link:
-  ~/.dotfiles: ''
-  ~/.config/git: git
-  ~/.config/vim: vim
-
+    ~/.dotfiles: ''
+    ~/.config/git: git
+    ~/.config/zsh/.zshrc.local: sh/zsh/zshrc.local
+    ~/.zshenv: 
