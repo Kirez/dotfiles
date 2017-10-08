@@ -4,6 +4,7 @@ set tabstop=2     " Display tab as two spaces
 set expandtab     " Insert spaces instead of tab symbol
 set softtabstop=2 " The number of spaces to insert
 
-set number
-set showcmd
+set number " Line numbering
+
+so ~/.dotfiles/vim/vundlesetup.vim
 
