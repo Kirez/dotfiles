@@ -1,0 +1,8 @@
+# .gitconfig
+
+[user]
+  email = kalerik@student.chalmers.se
+  name  = Erik Källberg
+
+[core]
+  editor = vim
