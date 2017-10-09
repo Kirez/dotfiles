@@ -8,3 +8,15 @@ set number " Line numbering
 
 so ~/.dotfiles/vim/vundlesetup.vim
 
+" highlight line 81
+set textwidth=80
+set colorcolumn=+1
+
+" key maps 
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+

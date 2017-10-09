@@ -1,1 +1,4 @@
 URxvt.scrollBar: false
+URxvt.transparent: true
+URxvt.shading: 30
+URxvt.font: xft:xos4 Terminus:size=11, xft:Noto Sans
