@@ -3,6 +3,7 @@
 [user]
   email = kalerik@student.chalmers.se
   name  = Erik Källberg
+  signingKey = 4DD460375676EC148B4CE9B28D08444541C70804
 
 [core]
   editor = vim
