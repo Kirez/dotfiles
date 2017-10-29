@@ -1,0 +1,159 @@
+#i3 config~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Dependencies~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# - dmenu
+# - rofi
+# - polybar
+# - playerctl
+# - pactl
+# - i3-gaps
+# - TODO
+
+#Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $up k
+set $right l
+set $fontsize 11
+
+#Window~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+font pango:monospace $fontsize
+floating_modifier $mod
+
+#Keys~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+#Focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+#Move
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#Split
+bindsym $mod+Shift+v split h
+bindsym $mod+v split v
+
+#Fullscreen
+bindsym $mod+f fullscreen toggle
+
+#Layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+#Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+#Focus switching
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+#Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+#Move to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+#Reload
+bindsym $mod+Shift+c reload
+#Restart
+bindsym $mod+Shift+r restart
+#Exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+#Resize Mode
+mode "resize" {
+        # Pressing down will grow the window’s height.
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#Resize
+bindsym $mod+r mode "resize"
+
+#Media keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% #decrease sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+#Color~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set_from_resource $fg i3wm.color6 #ff00ff
+set_from_resource $bg i3wm.color1 #ff00ff
+set_from_resource $afg i3wm.color5 #ff00ff
+set_from_resource $abg i3wm.color2 #ff00ff
+
+# class                 border  backgr. text indicator child_border
+client.focused          $abg  $abg  $abg  $abg  $abg
+client.focused_inactive $bg   $bg   $fg   $bg   $bg
+client.unfocused        $bg   $bg   $fg   $bg   $bg
+client.urgent           $bg   $bg   $fg   $bg   $bg
+client.placeholder      $bg   $bg   $fg   $bg   $bg
+
+client.background       $bg
+
+
+#i3-gaps~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+for_window [class="^.*"] border pixel 3
+gaps inner 15
+smart_gaps on
+hide_edge_borders both
+
+#Bar (polybar)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
