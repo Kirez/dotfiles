@@ -11,6 +11,7 @@
     ~/.config/X11/.Xresources: X11/.Xresources
     ~/.config/zsh/.zshrc.local: zsh/zshrc.local
     ~/.config/i3/config: i3/config
+    ~/.config/polybar: 
     ~/.zshenv: 
     ~/.vimrc: vim/vimrc
     ~/.vim: vim

@@ -1,0 +1,178 @@
+[colors]
+xcolor0 = ${xrdb:color0}
+xcolor1 = ${xrdb:color1}
+xcolor2 = ${xrdb:color2}
+xcolor3 = ${xrdb:color3}
+xcolor4 = ${xrdb:color4}
+xcolor5 = ${xrdb:color5}
+xcolor6 = ${xrdb:color6}
+xcolor7 = ${xrdb:color7}
+xcolor8 = ${xrdb:color8}
+xcolor9 = ${xrdb:color9}
+xcolor10 = ${xrdb:color10}
+xcolor11 = ${xrdb:color11}
+xcolor12 = ${xrdb:color12}
+xcolor13 = ${xrdb:color13}
+xcolor14 = ${xrdb:color14}
+xcolor15 = ${xrdb:color15}
+background = ${colors.xcolor0}
+foreground = ${colors.xcolor7}
+background-alt = ${colors.xcolor1}
+foreground-alt = ${colors.xcolor6}
+
+[settings]
+format-padding = 1 
+
+[bar/top]
+
+modules-left = i3 
+modules-center = date
+modules-right = cpu memory 
+
+tray-position = right
+
+monitor =
+width = 100%
+height = 32
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+[module/cpu]
+type = internal/cpu
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label> <ramp-coreload>
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = CPU %percentage%%
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+ramp-coreload-foreground = ${colors.foreground-alt} 
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 15 
+bar-used-foreground-0 = ${colors.xcolor3}
+bar-used-foreground-1 = ${colors.xcolor4}
+bar-used-foreground-2 = ${colors.xcolor5}
+bar-used-foreground-3 = ${colors.xcolor6}
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = ${colors.foreground-alt}
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = ${colors.foreground} 
+
+[module/i3]
+type = internal/i3
+; Only show workspaces defined on the same output as the bar
+pin-workspaces = true
+; This will split the workspace name on ':'
+strip-wsnumbers = true
+; Sort the workspaces by index
+index-sort = true
+; Create click handler used to focus workspace
+enable-click = true
+; Create scroll handlers used to cycle workspaces
+enable-scroll = false
+; Wrap around when reaching the first/last workspace
+wrapping-scroll = false
+; Set the scroll cycle direction 
+reverse-scroll = false
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+; Available tokens:
+;   %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.background} 
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+label-focused = %index%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.xcolor4}
+label-focused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+date = %d/%m/%Y 
+
+; Optional time format
+time = %H:%M
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S 
+
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = ${colors.background} 
+format-foreground = ${colors.foreground}
+
+; Available tokens:
+;   %date%
+;   %time%
+; Default: %date%
+label = %date% - %time%
+label-font = 3
+label-foreground = ${colors.foreground}
+
+; vim:ft=dosini
