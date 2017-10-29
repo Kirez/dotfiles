@@ -14,3 +14,4 @@
     ~/.zshenv: 
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
+    ~/.xinitrc:
