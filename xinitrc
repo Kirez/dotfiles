@@ -3,5 +3,6 @@
 #exec gnome-session
 xrdb -merge $HOME/.config/X11/.Xresources
 xrdb -merge $HOME/.cache/wal/colors.Xresources
-xset r rate 250 20
+xset r rate 250 30
+nitrogen --restore
 exec i3
