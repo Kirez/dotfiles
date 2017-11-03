@@ -1,0 +1,27 @@
+[global]
+    geometry = "0x5-0+32"
+    indicate_hidden = yes
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    frame_width = 3
+    sort = yes
+    idle_threshold = 120
+    font = Source Sans Pro 13
+    line_height = 0
+    markup = full
+    format = "<b>%a - %s</b>\n%b"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    sticky_history = yes
+    history_length = 20
+    title = Dunst
+    class = Dunst
+
+# vim: ft=cfg
