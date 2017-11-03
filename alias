@@ -1,0 +1,1 @@
+alias wal="wal -o ~/.dotfiles/wal/wal-set.sh"
