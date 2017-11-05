@@ -12,6 +12,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'dylanaraps/wal.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 " Plugin section end
 
 call vundle#end()            " required
