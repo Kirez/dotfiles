@@ -1,5 +1,5 @@
 [global]
-    geometry = "0x5-0+32"
+    geometry = "512x5-0+32"
     indicate_hidden = yes
     separator_height = 2
     padding = 8
@@ -19,6 +19,7 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
+    max_icon_size = 128
     sticky_history = yes
     history_length = 20
     title = Dunst
