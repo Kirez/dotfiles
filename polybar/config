@@ -21,13 +21,13 @@ background-alt = ${colors.xcolor1}
 foreground-alt = ${colors.xcolor6}
 
 [settings]
-format-padding = 1 
+format-padding = 1
 
 [bar/top]
 
-modules-left = i3 
+modules-left = i3
 modules-center = date
-modules-right = volume battery backlight cpu memory 
+modules-right = volume battery backlight cpu memory
 
 tray-position = right
 
@@ -59,7 +59,7 @@ format = <label> <ramp-coreload>
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU 
+label = CPU
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
 ramp-coreload-2 = ▃
@@ -68,14 +68,14 @@ ramp-coreload-4 = ▅
 ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
-ramp-coreload-foreground = ${colors.foreground-alt} 
+ramp-coreload-foreground = ${colors.foreground-alt}
 
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
 label = RAM
 
-bar-used-width = 15 
+bar-used-width = 15
 bar-used-foreground-0 = ${colors.xcolor3}
 bar-used-foreground-1 = ${colors.xcolor4}
 bar-used-foreground-2 = ${colors.xcolor5}
@@ -87,7 +87,7 @@ bar-used-fill = ─
 bar-used-fill-font = 6
 bar-used-empty = ─
 bar-used-empty-font = 6
-bar-used-empty-foreground = ${colors.foreground} 
+bar-used-empty-foreground = ${colors.foreground}
 
 [module/i3]
 type = internal/i3
@@ -103,7 +103,7 @@ enable-click = true
 enable-scroll = false
 ; Wrap around when reaching the first/last workspace
 wrapping-scroll = false
-; Set the scroll cycle direction 
+; Set the scroll cycle direction
 reverse-scroll = false
 
 ; Available tags:
@@ -114,7 +114,7 @@ format = <label-state> <label-mode>
 ;   %mode%
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = ${colors.background} 
+label-mode-background = ${colors.background}
 
 ; Available tokens:
 ;   %name%
@@ -157,7 +157,7 @@ type = internal/date
 ; Seconds to sleep between updates
 interval = 1.0
 
-date = %d/%m/%Y 
+date = %d/%m/%Y
 
 ; Optional time format
 time = %H:%M
@@ -165,12 +165,12 @@ time = %H:%M
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S 
+time-alt = %H:%M:%S
 
 ; Available tags:
 ;   <label> (default)
 format = <label>
-format-background = ${colors.background} 
+format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
 ; Available tokens:
@@ -204,7 +204,7 @@ time-format = %H:%M
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-charging>
-format-charging = <label-charging> <animation-charging> 
+format-charging = <label-charging> <animation-charging>
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
@@ -215,7 +215,7 @@ format-discharging = <label-discharging> <ramp-capacity>
 ;   <label-full> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
-format-full = <ramp-capacity> <label-full> 
+format-full = <ramp-capacity> <label-full>
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -231,7 +231,7 @@ label-discharging = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-full = 
+label-full =
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -260,7 +260,7 @@ speaker-soundcard = default
 headphone-soundcard = default
 
 headphone-mixer = Headphone
-headphone-id = 15   
+headphone-id = 15
 
 ; Available tags:
 ;   <label-volume> (default)
@@ -283,8 +283,8 @@ label-volume = %percentage%%
 label-muted = 🔇 muted
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 =  
-ramp-volume-1 =  
+ramp-volume-0 = 
+ramp-volume-1 = 
 ramp-volume-2 = 
 
 ; If defined, it will replace <ramp-volume> when
